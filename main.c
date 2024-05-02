@@ -6,7 +6,7 @@
 /*   By: beyildiz <beyildiz@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 13:05:20 by beyildiz          #+#    #+#             */
-/*   Updated: 2024/04/30 16:13:44 by beyildiz         ###   ########.fr       */
+/*   Updated: 2024/05/02 17:20:59 by beyildiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,21 +51,18 @@ int	check_number(char *str)
 	{
 		if (str[i] == '-')
 		{
-			if (str[++i] <= '9' && str[++i] >= '0')
-				i++;
-			else
+			if (str[++i] > '9' || str[++i] < '0')
 			{
 				ft_printf("Error\n");
 				return (0);
 			}
 		}
-		else if (str[i] <= '9' && str[i] >= '0')
-			i++;
-		else
+		else if (str[i] > '9' || str[i] < '0')
 		{
 			ft_printf("ERROR\n");
 			return (0);
 		}
+		i++;
 	}
 	return (1);
 }
@@ -74,7 +71,6 @@ int	main(int argc, char *argv[])
 {
 	Stack	a;
 	int		i;
-	int		j;
 
 	if (argc < 0 || argc == 1)
 	{
@@ -83,7 +79,6 @@ int	main(int argc, char *argv[])
 	}
 	a.top = -1;
 	i = 0;
-	j = 0;
 	while (argv[i])
 	{
 		check_number(ft_strdup(argv[i]));
