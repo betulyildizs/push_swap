@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   create_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beyildiz <beyildiz@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 13:05:20 by beyildiz          #+#    #+#             */
-/*   Updated: 2024/05/02 19:39:36 by beyildiz         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:47:26 by beyildiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,47 @@
 	}
 }*/
 
+int	print_sorted_stack(Stack *a)
+{
+	int	i;
+
+	i = 0;
+	while (i <= a->top)
+	{
+		ft_printf("%d\n", a->values[i]);
+		i++;
+	}
+	return (0);
+}
+
+int	shell_sort(int n, Stack *a)
+{
+	int		gap;
+	int		i;
+	char	temp;
+	int		j;
+
+	gap = n / 2;
+	while (gap > 0)
+	{
+		i = gap;
+		while (i < n)
+		{
+			temp = a->values[i];
+			j = i;
+			while (j >= gap && a->values[j - gap] > temp)
+			{
+				a->values[j] = a->values[j - gap];
+				j -= gap;
+			}
+			i++;
+		}
+		gap /= 2;
+	}
+	print_sorted_stack(a);
+	return (0);
+}
+
 int	push_onto_stack(int argc, char *argv[], Stack a)
 {
 	int	i;
@@ -38,7 +79,7 @@ int	push_onto_stack(int argc, char *argv[], Stack a)
 			return (1);
 		i++;
 	}
-	print_stack(a);
+	//print_stack(a);
 	return (0);
 }
 
@@ -85,5 +126,6 @@ int	main(int argc, char *argv[])
 		check_number(ft_strdup(argv[i]), argc, argv, a);
 		i++;
 	}
+	shell_sort(argc - 1, &a);
 	return (0);
 }

@@ -6,8 +6,8 @@ FILES	= ft_printf.c \
 		  ft_calculate_length.c \
 		  ft_print_pointer.c \
 		  ft_print_hex.c \
-		  main.c \
 		  push_swap_utils.c \
+		  create_stack.c \
 
 CC		= gcc
 

@@ -6,7 +6,7 @@
 /*   By: beyildiz <beyildiz@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 13:05:17 by beyildiz          #+#    #+#             */
-/*   Updated: 2024/04/30 16:08:55 by beyildiz         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:46:54 by beyildiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,10 @@ typedef	struct
 
 int		ft_atoi(char *str);
 int		push_onto_stack(int argc, char *argv[], Stack a);
-int		check_number(char *str);
+int		check_number(char *str, int argc, char **argv, Stack a);
 char	*ft_strdup(const char *str);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlen(const char *str);
+int		shell_sort(int n, Stack *a);
 
 #endif
