@@ -10,7 +10,8 @@ typedef struct s_list
 	int				index;
 	struct s_list	*next;
 }				t_list;
-
+//Eğer typedef kullanmasaydınız, struct s_list yapısını kullanmak için her 
+//seferinde tam ismini yazmanız gerekirdi. 
 static void     create_stack(t_list **stack_a, int argc, char **argv);
 static size_t	ft_toklen(const char *s, char c);
 char	        *ft_strdup(const char *str);
@@ -42,11 +43,12 @@ void	        sort_5(t_list **stack_a, t_list **stack_b);
 static void	    sort_4(t_list **stack_a, t_list **stack_b);
 static void	    sort_3(t_list **stack_a);
 static int	    get_min(t_list **stack, int val);
-static void     sort_3_cond(t_list **stack_a, int min, int next_min);
+void     		sort_3_cond(t_list **stack_a, int min, int next_min);
 int		        swap(t_list **stack);
 int		        push(t_list **stack_to, t_list **stack_from);
 int		        rotate(t_list **stack);
 int		        reverseRotate(t_list **stack);
+int				get_distance(t_list **stack, int index);
 //instructions:
 int		        sa(t_list **stack_a);
 int		        sb(t_list **stack_b);
@@ -63,5 +65,6 @@ int		        rrr(t_list **stack_a, t_list **stack_b);
 static int	    ft_contains(int num, char **argv, int i);
 static int		ft_isnum(char *num);
 void			check_argv(int argc, char **argv);
+int				ft_isdigit(int c);
 
 #endif

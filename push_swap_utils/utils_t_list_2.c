@@ -28,3 +28,24 @@ int	sort_cont(t_list **stack)
 	}
 	return (1);
 }
+
+void sort_3_cond(t_list **stack_a, int min, int next_min)
+{
+    else if (head->index == next_min)
+	{
+		if (head->next->index == min)
+			sa(stack_a);
+		else
+			rra(stack_a);
+	}
+	else
+	{
+		if (head->next->index == min)
+			ra(stack_a);
+		else
+		{
+			sa(stack_a);
+			rra(stack_a);
+		}
+	}
+}

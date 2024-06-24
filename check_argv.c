@@ -55,4 +55,20 @@ void	check_argv(int argc, char **argv)
 	}
 	if (argc == 2)
 		ft_free(args);
+		/*argsye ft_split fonksiyonu ile bir 2 boyutlu dizi atanır, 
+		böylece dinamik yer tahsis edilmiş olunur. Ancak diğer durumda, 
+		args çift pointerı argv pointerının işaret ettiği çift boyutlu diziye 
+		işaret ettirilir sadece, onun tutması gereken yeni bir dizi oluşmaz. 
+		ft_split, döndürdüğü dizi ile char **pointer veri türündeki değişkenin 
+		daha önce yer tahsis edilmemiş bir şeyi tutmasını sağlar.
+
+argc'nin 2'den fazla olduğu durumlarda argümanlar, terminale tek tek sayılar 
+içererek girilmiş demektir. 
+Bu durumda verilerin yer tahsisi argv değişkeni ile gerçekleşir. 
+Bu durumda args için yeniden yer tahsisine gerek yoktur.
+
+Eğer argc 2'ye eşitse, yani argümanlar boşluk karakteri ile ayrılmış olarak 
+tek argümanla alınmışsa, bu argüman ft_split ile çift pointerlı char dizisine dönüştürülür 
+ve argsnin tutabilmesi için dinamik yer tahsisi gerçekleşir. Bu durumda, işimiz bittiğinde 
+bu belleği serbest bırakmak gerekir.*/
 }

@@ -69,7 +69,9 @@ int main(int argc, char **argv)
     check_argv(argc, argv);
     t_list  **stack_a;
     t_list  **stack_b;
-
+/*biz stackin ilk düğümünü gösteren pointerı gösteren pointerı
+ tanımlıyoruz çünkü başlangıç pointerın hangisi olacağını bu 
+ tanımladığımız pointera atağığımız değerle modifiye edebiliriz kolayca.*/
     stack_a = (t_list **)malloc(sizeof(t_list));
     stack_b = (t_list **)malloc(sizeof(t_list));
 	*stack_a = NULL;

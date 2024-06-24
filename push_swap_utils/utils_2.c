@@ -21,3 +21,20 @@ void	ft_free(char **str)
 	while (i >= 0)
 		free(str[i--]);
 }
+
+int	get_distance(t_list **stack, int index)
+{
+	t_list	*head;
+	int		distance;
+
+	distance = 0;
+	head = *stack;
+	while (head)
+	{
+		if (head->index == index)
+			break ;
+		distance++;
+		head = head->next;
+	}
+	return (distance);
+}

@@ -36,7 +36,8 @@ static void sort_3_cond(t_list **stack_a, int min, int next_min)
 		}
 	}
 }
-	sort_3(t_list **stack_a)
+
+static void		sort_3(t_list **stack_a)
 {
 	t_list	*head;
 	int		min;
